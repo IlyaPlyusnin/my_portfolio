@@ -1,0 +1,41 @@
+$primary-color: rgb(65, 70, 66);
+$secondary-color: #9b2424;
+
+@mixin myTransition {
+  transition: all 0.5s ease-out;
+}
+
+@function setTextColor($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@keyframes fromRight {
+  from {
+    transform: translateX(1600px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@mixin smallScreen {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediumScreen {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin largeScreen {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}

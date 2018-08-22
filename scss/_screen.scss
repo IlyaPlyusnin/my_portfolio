@@ -1,0 +1,85 @@
+@include mediumScreen {
+  .index-grid {
+    justify-content: center;
+  }
+  .about-grid {
+    grid-template-areas:
+      "heading"
+      "picture"
+      "bio"
+      "job-1"
+      "job-2"
+      "job-3";
+    grid-template-columns: 1fr;
+    h1,
+    h2 {
+      text-align: center;
+    }
+  }
+  .menu {
+    grid-template-areas:
+      "top"
+      "bottom";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .my-photo {
+      grid-area: top;
+      transform: translateX(100%);
+      @include myTransition;
+
+      &.show {
+        transform: translateX(0);
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .nav-menu {
+      grid-area: bottom;
+      transform: translateX(-100%);
+      @include myTransition;
+
+      &.show {
+        transform: translateX(0);
+      }
+    }
+  }
+  .projects-grid {
+    grid-template-areas:
+      "top top"
+      "proj-1 proj-2"
+      "proj-3 proj-4";
+  }
+  .contact-grid {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@include largeScreen {
+  .projects-grid {
+    grid-template-areas:
+      "top top top"
+      "proj-1 proj-2 proj-3"
+      "proj-4 .       .     ";
+  }
+}
+
+@include smallScreen {
+  .projects-grid {
+    grid-template-areas:
+      "top"
+      "proj-1"
+      "proj-2"
+      "proj-3"
+      "proj-4";
+    justify-content: center;
+    text-align: center;
+  }
+  .contact-grid {
+    justify-content: center;
+    text-align: center;
+  }
+}
