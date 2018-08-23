@@ -283,6 +283,10 @@ a {
       .contact-grid .box:hover span {
         color: #fff; }
 
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects-grid {
+    grid-template-areas: "top top top" "proj-1 proj-2 proj-3" "proj-4 .       .     "; } }
+
 @media screen and (max-width: 768px) {
   .index-grid {
     justify-content: center; }
@@ -317,15 +321,21 @@ a {
     justify-content: center;
     text-align: center; } }
 
-@media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects-grid {
-    grid-template-areas: "top top top" "proj-1 proj-2 proj-3" "proj-4 .       .     "; } }
-
 @media screen and (max-width: 500px) {
+  .about-grid {
+    margin: 3rem; }
   .projects-grid {
     grid-template-areas: "top" "proj-1" "proj-2" "proj-3" "proj-4";
     justify-content: center;
-    text-align: center; }
+    text-align: center;
+    margin: 2rem; }
   .contact-grid {
     justify-content: center;
-    text-align: center; } }
+    text-align: center; }
+    .contact-grid .box {
+      padding: 1.5rem;
+      font-size: 1.2rem; }
+  .grid {
+    justify-content: center; }
+  h1 {
+    font-size: 4rem; } }
